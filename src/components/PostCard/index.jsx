@@ -1,6 +1,7 @@
 /* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
+import Avatar from 'images/avatar.png';
 import StPostCard from './styles/StPostCard';
 import StAuthorInfo from './styles/StAuthorInfo';
 import StContent from './styles/StContent';
@@ -12,7 +13,7 @@ import StPostPhoto from './styles/StPostPhoto';
 const PostCard = ({ post }) => (
   <StPostCard>
     <StAuthorInfo>
-      <StAvatar src={post.photoURL} />
+      <StAvatar src={Avatar} />
       <StContent>
         {!post.authorNameMatchLevel || post.authorNameMatchLevel === 'none' ? (
           <StName>{post.authorName}</StName>

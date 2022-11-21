@@ -9,6 +9,7 @@ import PostCard from 'components/PostCard';
 import Input from 'components/Input';
 import { SIZES } from 'utils/constant';
 import algoliasearch from 'algoliasearch/lite';
+import Text from 'components/Text';
 import PostContainer from './styles/PostContainer';
 
 const client = algoliasearch(
@@ -29,8 +30,9 @@ const Search = () => {
   const performSearch = async (value) => {
     if (value) {
       const { hits } = await index.search(value, {
-        hitsPerPage: 5,
+        hitsPerPage: 10,
       });
+      console.log({ hits });
       const searchedPosts = hits.map((hit) => {
         const { objectID: key, photoURL, _highlightResult } = hit;
         const {
@@ -69,7 +71,11 @@ const Search = () => {
         value={text}
       />
       <PostContainer>
-        {posts.length > 0 && posts.map((post) => <PostCard post={post} />)}
+        {posts.length > 0 ? (
+          posts.map((post) => <PostCard post={post} />)
+        ) : (
+          <Text>No hay posts disponibles</Text>
+        )}
       </PostContainer>
     </>
   );
