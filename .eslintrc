@@ -1,0 +1,51 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:jest/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:import/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended",
+    "airbnb",
+    "prettier",
+    "prettier/react"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "jest",
+    "react-hooks",
+    "import",
+    "jsx-a11y",
+    "jest-dom",
+    "testing-library"
+  ],
+  "rules": {
+    "jest/expect-expect": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react-hooks/exhaustive-deps": 0
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    }
+  },
+  "globals": {
+    "reducerTester": true,
+    "actionTester": true,
+    "renderWithProviders": true
+  }
+}
