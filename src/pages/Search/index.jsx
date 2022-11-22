@@ -72,7 +72,7 @@ const Search = () => {
       />
       <PostContainer>
         {posts.length > 0 ? (
-          posts.map((post) => <PostCard post={post} />)
+          posts.map((post) => <PostCard key={post.key} post={post} />)
         ) : (
           <Text>No hay posts disponibles</Text>
         )}
